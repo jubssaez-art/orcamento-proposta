@@ -1,0 +1,35 @@
+@echo off
+chcp 65001 >nul
+cd /d "%~dp0Joias\joias"
+echo.
+echo  === Publicando Studio Miura + Catalogo de Joias na conta jubssaez-art ===
+echo.
+
+echo [1/4] Criando o repositorio (se ja existir, tudo bem)...
+gh repo create jubssaez-art/js-joias-delicadas --public
+echo.
+
+echo [2/4] Apontando o projeto para o repositorio novo...
+git remote set-url origin https://github.com/jubssaez-art/js-joias-delicadas.git
+echo.
+
+echo [3/4] Enviando o site...
+git push -u origin main
+if errorlevel 1 (
+  echo.
+  echo  ERRO ao enviar. Tire um print desta janela e mande no chat.
+  pause
+  exit /b 1
+)
+echo.
+
+echo [4/4] Ativando o GitHub Pages...
+gh api -X POST repos/jubssaez-art/js-joias-delicadas/pages -f build_type=workflow >nul 2>&1
+gh api -X PUT repos/jubssaez-art/js-joias-delicadas/pages -f build_type=workflow >nul 2>&1
+gh workflow run deploy.yml -R jubssaez-art/js-joias-delicadas >nul 2>&1
+echo.
+echo  PRONTO! Em uns 2 minutos o site abre em:
+echo    Studio Miura:  https://jubssaez-art.github.io/js-joias-delicadas/
+echo    Joias:         https://jubssaez-art.github.io/js-joias-delicadas/joias.html
+echo.
+pause
