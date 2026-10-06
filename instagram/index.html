@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Estrutura do Instagram · Studio Miura</title>
-<meta name="description" content="Os dois perfis do Studio Miura: estrutura, banco de conteúdo, grade, calendário e anúncios pagos.">
+<meta name="description" content="Simulador do perfil: os dois perfis do Studio Miura, banco de conteúdo, grade, calendário e anúncios pagos.">
 <meta name="theme-color" content="#43141D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -456,6 +456,76 @@ body{
 @media(max-width:620px){ .hero{padding:34px 20px 30px} .tabs{top:0} }
 </style>
 
+<style>
+/* ======================= O APARELHO ======================= */
+.lado{display:grid;grid-template-columns:minmax(0,1fr) 304px;gap:18px;align-items:start}
+@media(max-width:860px){ .lado{grid-template-columns:1fr} .fone-cx{justify-self:center} }
+.fone-cx{position:sticky;top:64px;display:grid;gap:8px;justify-items:center}
+.fone{
+  --f-bg:#FFFFFF; --f-ink:#121212; --f-ink2:#737373; --f-line:#DBDBDB; --f-sunk:#EFEFEF; --f-link:#00376B;
+  width:296px; border:9px solid #16131A; border-radius:34px; background:var(--f-bg);
+  overflow:hidden; color:var(--f-ink); box-shadow:0 30px 60px -30px rgba(43,16,22,.6), 0 0 0 1px rgba(0,0,0,.18);
+  font-family:var(--sans); user-select:none;
+}
+@media (prefers-color-scheme:dark){ .fone{
+  --f-bg:#000000; --f-ink:#F5F5F5; --f-ink2:#A8A8A8; --f-line:#262626; --f-sunk:#1A1A1A; --f-link:#E0F1FF }}
+.fone .sb{display:flex;justify-content:space-between;align-items:center;padding:7px 14px 2px;
+  font:700 10.5px var(--sans);color:var(--f-ink)}
+.fone .sb u{text-decoration:none;letter-spacing:.3px}
+.fone .sb s{text-decoration:none;display:flex;gap:3px;align-items:center;opacity:.9}
+.fone .nav{display:flex;align-items:center;gap:7px;padding:8px 13px;border-bottom:1px solid var(--f-line)}
+.fone .nav b{font:600 15px var(--sans)}
+.fone .nav span{margin-left:auto;color:var(--f-ink2);font-size:15px;letter-spacing:2px}
+.fone .cab{display:flex;gap:17px;align-items:center;padding:14px 15px 9px}
+.fone .ava{width:72px;height:72px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+  font:700 23px var(--disp);color:#fff;background:linear-gradient(145deg,#7B2D3B,#43141D);
+  box-shadow:0 0 0 2px var(--f-bg), 0 0 0 4px #C9A227}
+.fone .nums{display:flex;gap:4px;flex:1;justify-content:space-around;text-align:center}
+.fone .nums div{display:grid;gap:1px}
+.fone .nums b{font:700 15px var(--sans)}
+.fone .nums i{font:400 11.5px var(--sans);font-style:normal;color:var(--f-ink2)}
+.fone .txt{padding:0 15px 10px;display:grid;gap:2px}
+.fone .txt .nm{font:600 12.5px var(--sans)}
+.fone .txt .bio{font:400 12.5px/1.42 var(--sans);white-space:pre-wrap;word-break:break-word}
+.fone .txt .lk{font:600 12.5px var(--sans);color:var(--f-link);word-break:break-all}
+.fone .bts{display:flex;gap:6px;padding:0 15px 12px}
+.fone .bts u{flex:1;text-decoration:none;text-align:center;background:var(--f-sunk);color:var(--f-ink);
+  border-radius:8px;padding:6px 0;font:600 12px var(--sans)}
+.fone .bts u.pri{background:#0095F6;color:#fff}
+.fone .dst{display:flex;gap:14px;padding:4px 15px 13px;overflow-x:auto;scrollbar-width:none}
+.fone .dst::-webkit-scrollbar{display:none}
+.fone .dst i{font-style:normal;display:grid;gap:5px;justify-items:center;flex:0 0 auto;width:58px}
+.fone .dst i em{width:54px;height:54px;border-radius:50%;background:var(--f-sunk);
+  border:1px solid var(--f-line);display:grid;place-items:center;font-style:normal;font-size:17px}
+.fone .dst i span{font:400 10px var(--sans);color:var(--f-ink);text-align:center;line-height:1.2;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+.fone .abas{display:flex;border-top:1px solid var(--f-line)}
+.fone .abas u{flex:1;text-align:center;padding:9px 0;font-size:14px;color:var(--f-ink2);
+  text-decoration:none;border-bottom:1.5px solid transparent}
+.fone .abas u.on{color:var(--f-ink);border-bottom-color:var(--f-ink)}
+.fone .gr{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px 0 0}
+.fone .gq{aspect-ratio:1;background:var(--f-sunk);display:grid;align-content:center;gap:3px;padding:7px;
+  overflow:hidden;position:relative;animation:quadIn .42s var(--mola) both}
+.fone .gq b{font:700 7.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--f-ink2)}
+.fone .gq span{font:500 9.5px/1.22 var(--sans);color:var(--f-ink);
+  display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.fone .gq.of{background:linear-gradient(150deg,#7B2D3B,#43141D)}
+.fone .gq.of b,.fone .gq.of span{color:#F7EADF}
+.fone .gq.pv{background:linear-gradient(150deg,#E9DBC4,#DBC7A9)} .fone .gq.pv b,.fone .gq.pv span{color:#43141D}
+.fone .gq.vz{background:repeating-linear-gradient(135deg,var(--f-sunk),var(--f-sunk) 7px,transparent 7px,transparent 14px)}
+.fone .gq.vz span{color:var(--f-ink2);font-size:9px}
+.fone .fim{height:17px;display:grid;place-items:center}
+.fone .fim i{width:92px;height:4px;border-radius:999px;background:var(--f-line)}
+.fone-leg{font:600 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.fone-sw{display:flex;gap:5px}
+.fone-sw button{font:600 10.5px var(--mono);letter-spacing:.05em;text-transform:uppercase;
+  background:var(--sunk);border:1px solid var(--line);color:var(--ink2);border-radius:999px;
+  padding:5px 11px;cursor:pointer;transition:all .22s var(--mola)}
+.fone-sw button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.conta-bio{font:600 10.5px var(--mono);color:var(--ink3)}
+.conta-bio.estourou{color:var(--crit)}
+</style>
+
 </head>
 <body>
 <header>
@@ -606,14 +676,17 @@ body{
   <div class="card">
     <span class="eyebrow">A grade</span>
     <h2>Como os próximos nove quadros ficam</h2>
-    <p class="muted">Os nove itens mais antigos do banco marcados como <b>pronto</b>, na ordem em que entrariam. É o que a pessoa vê quando abre o perfil e decide em dois segundos se segue.</p>
+    <p class="muted">Os nove itens mais antigos do banco marcados como <b>pronto</b>, na ordem em que entrariam — dentro do aparelho, do jeito que o Instagram mostra. É o que a pessoa vê quando abre o perfil e decide em dois segundos se segue.</p>
     <div class="filtros">
       <select id="gPerfil">
         <option value="studio">Grade do Studio Miura</option>
         <option value="pessoal">Grade do meu perfil</option>
       </select>
     </div>
-    <div class="grade9" id="grade9"></div>
+    <div class="fone-cx" style="position:static;justify-items:start">
+      <div class="fone" id="fone-grade"></div>
+      <span class="fone-leg">a grade como o Instagram mostra</span>
+    </div>
   </div>
 
   <div class="card">
@@ -851,6 +924,14 @@ function semeia(){
                          link:p.hoje.link,destaques:"",feito:(d&&d.feito)||{}});
   });
 }
+/* O Instagram corta a bio em 150 caracteres. Melhor descobrir aqui. */
+function contaBio(el){
+  var cx=el.parentNode, m=cx.querySelector(".conta-bio");
+  if(!m){ m=document.createElement("span"); m.className="conta-bio"; cx.appendChild(m) }
+  var n=el.value.length;
+  m.textContent=n+"/150 caracteres"+(n>150?" — o Instagram vai cortar":"");
+  m.className="conta-bio"+(n>150?" estourou":"");
+}
 function dadosPerfil(id){
   var d=lojaPerfis.get(id)||{};
   return {arroba:d.arroba||"",nome:d.nome||"",bio:d.bio||"",link:d.link||"",destaques:d.destaques||"",feito:d.feito||{}};
@@ -870,6 +951,7 @@ function desenhaPerfis(){
     return '<div class="card">'+
       '<span class="eyebrow">'+esc(p.n)+'</span>'+
       '<h3 style="margin:2px 0 0">'+esc(p.papel)+'</h3>'+
+      '<div class="lado"><div>'+
       '<div class="campo"><span>@ do perfil</span><input type="text" data-p="'+p.id+'" data-c="arroba" value="'+esc(d.arroba)+'" placeholder="'+esc(p.arrobaSug||"@")+'"></div>'+
       (p.hoje?'<div class="banner at"><b>Hoje: '+esc(p.hoje.arroba)+' · '+p.hoje.posts+' posts · '+p.hoje.seguidores+' seguidores · segue '+p.hoje.seguindo+'.</b>'+
         '<span>A bio fala de <b>Data Analytics, SQL e planejamento financeiro</b> — nada de beleza. Quem chega por indicação do studio não entende que é você. E o link é um menu (guns.lol): cada toque a mais até o WhatsApp perde gente pelo caminho.</span></div>':'')+
@@ -906,8 +988,91 @@ function desenhaPerfis(){
           '<span class="bx">'+(on?"✓":"")+'</span>'+
           '<span class="tx">'+esc(c[1])+'<i>'+esc(c[2])+'</i></span></button>';
       }).join("")+'</div>'+
+      '</div>'+
+      '<div class="fone-cx">'+
+        '<div class="fone" id="fone-'+p.id+'"></div>'+
+        '<div class="fone-sw" role="group" aria-label="Quem está vendo">'+
+          '<button type="button" data-vis="'+p.id+'|cliente" aria-pressed="true">Como a cliente vê</button>'+
+          '<button type="button" data-vis="'+p.id+'|eu" aria-pressed="false">Como eu vejo</button>'+
+        '</div>'+
+        '<span class="fone-leg">prévia ao vivo</span>'+
+      '</div>'+
+      '</div>'+
     '</div>';
   }).join("");
+  PERFIS.forEach(function(p){ pintaFone(p.id) });
+}
+
+/* ---------- o aparelho ---------- */
+var visao={studio:"cliente",pessoal:"cliente"};
+function campoVivo(id,c){
+  var el=document.querySelector('#perfis [data-p="'+id+'"][data-c="'+c+'"]');
+  return el ? el.value : "";
+}
+function iniciais(nome,arroba){
+  var base=(nome||arroba||"").replace(/[@·]/g," ").trim();
+  var p=base.split(/\s+/).filter(Boolean);
+  if(!p.length) return "·";
+  return (p[0][0]+(p[1]?p[1][0]:"")).toUpperCase();
+}
+function postsDoFone(id){
+  var lista=itensBanco().filter(function(i){
+    return (i.status==="pronto"||i.status==="postado") &&
+           (i.perfil===id||i.perfil==="dois") && i.tipo!=="data" && i.tipo!=="frase";
+  });
+  return lista.slice(0,9);
+}
+function pintaFone(id){
+  var f=$("fone-"+id); if(!f) return;
+  var p=PERFIS.filter(function(x){return x.id===id})[0];
+  var d=dadosPerfil(id);
+  var arroba=(campoVivo(id,"arroba")||d.arroba||p.arrobaSug||"@seu.perfil").replace(/^@*/,"@");
+  var nome=campoVivo(id,"nome")||d.nome||p.nomeSug;
+  var bio=campoVivo(id,"bio")||d.bio||p.bioSug;
+  var link=(campoVivo(id,"link")||d.link||"").replace(/^https?:\/\//,"");
+  var dest=(campoVivo(id,"destaques")||d.destaques||p.destSug||"").split("·")
+            .map(function(s){return s.trim()}).filter(Boolean).slice(0,6);
+  var hoje=p.hoje||{};
+  var posts=postsDoFone(id);
+  var nPosts=posts.length||hoje.posts||0;
+  var quadros="";
+  for(var i=0;i<9;i++){
+    var it=posts[i];
+    if(it){
+      var cls = it.tipo==="oferta" ? " of" : (it.tipo==="prova" ? " pv" : "");
+      quadros+='<div class="gq'+cls+'" style="animation-delay:'+(i*0.035).toFixed(3)+'s">'+
+        '<b>'+esc(nomeTipo(it.tipo))+'</b><span>'+esc(it.titulo)+'</span></div>';
+    }else{
+      quadros+='<div class="gq vz" style="animation-delay:'+(i*0.035).toFixed(3)+'s"><span>vazio</span></div>';
+    }
+  }
+  var eu = visao[id]==="eu";
+  f.innerHTML=
+    '<div class="sb"><u>9:41</u><s>▮▮▮ ▲ ▰</s></div>'+
+    '<div class="nav"><b>'+esc(arroba)+'</b><span>☰</span></div>'+
+    '<div class="cab">'+
+      '<div class="ava">'+esc(iniciais(nome,arroba))+'</div>'+
+      '<div class="nums">'+
+        '<div><b>'+nPosts+'</b><i>publicações</i></div>'+
+        '<div><b>'+(hoje.seguidores!=null?hoje.seguidores:0)+'</b><i>seguidores</i></div>'+
+        '<div><b>'+(hoje.seguindo!=null?hoje.seguindo:0)+'</b><i>seguindo</i></div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="txt">'+
+      '<span class="nm">'+esc(nome)+'</span>'+
+      '<span class="bio">'+esc(bio)+'</span>'+
+      (link?'<span class="lk">'+esc(link)+'</span>':'')+
+    '</div>'+
+    '<div class="bts">'+(eu
+      ? '<u>Editar perfil</u><u>Compartilhar</u>'
+      : '<u class="pri">Seguir</u><u>Mensagem</u><u>▾</u>')+
+    '</div>'+
+    (dest.length?'<div class="dst">'+dest.map(function(t){
+        return '<i><em>✦</em><span>'+esc(t)+'</span></i>';
+      }).join("")+'</div>':'')+
+    '<div class="abas"><u class="on">▦</u><u>▷</u><u>☺</u></div>'+
+    '<div class="gr">'+quadros+'</div>'+
+    '<div class="fim"><i></i></div>';
 }
 $("perfis").addEventListener("focusout",function(){
   setTimeout(function(){
@@ -920,6 +1085,8 @@ var tDigita=null;
 $("perfis").addEventListener("input",function(e){
   var el=e.target.closest("[data-p]"); if(!el) return;
   var p=el.dataset.p, c=el.dataset.c, v=el.value;
+  pintaFone(p);
+  if(c==="bio") contaBio(el);
   clearTimeout(tDigita);
   tDigita=setTimeout(function(){ salvaPerfil(p,c,v) },450);
 });
@@ -936,6 +1103,16 @@ $("perfis").addEventListener("click",function(e){
     var p=PERFIS.filter(function(x){return x.id===sg.dataset.sug})[0], d2=dadosPerfil(p.id);
     d2.arroba=d2.arroba||p.arrobaSug||""; d2.nome=d2.nome||p.nomeSug; d2.bio=d2.bio||p.bioSug; d2.destaques=d2.destaques||p.destSug;
     lojaPerfis.set(p.id,d2); toast("Sugestão preenchida onde estava vazio");
+    return;
+  }
+  var vs=e.target.closest("[data-vis]");
+  if(vs){
+    var pv=vs.dataset.vis.split("|");
+    visao[pv[0]]=pv[1];
+    [].slice.call(vs.parentNode.children).forEach(function(b){
+      b.setAttribute("aria-pressed",String(b===vs));
+    });
+    pintaFone(pv[0]);
     return;
   }
   var ap=e.target.closest("[data-apl]");
@@ -1062,16 +1239,25 @@ function prontosDe(perfil){
   });
 }
 function desenhaGrade(){
-  var g=$("grade9"); if(!g) return;
+  var g=$("fone-grade"); if(!g) return;
   var perfil=$("gPerfil").value, nove=prontosDe(perfil).slice(0,9);
-  var quadros=[];
+  var pf=PERFIS.filter(function(x){return x.id===perfil})[0];
+  var dd=dadosPerfil(perfil);
+  var arroba=(dd.arroba||pf.arrobaSug||"@seu.perfil").replace(/^@*/,"@");
+  var quadros="";
   for(var i=0;i<9;i++){
     var it=nove[i];
-    quadros.push(it
-      ? '<div class="quad"><b>'+esc(nomeTipo(it.tipo))+'</b><span>'+esc(it.titulo)+'</span></div>'
-      : '<div class="quad vazio"><b>vazio</b><span>falta conteúdo pronto</span></div>');
+    var atraso=' style="animation-delay:'+(i*0.035).toFixed(3)+'s"';
+    quadros += it
+      ? '<div class="gq'+(it.tipo==="oferta"?" of":it.tipo==="prova"?" pv":"")+'"'+atraso+'>'+
+          '<b>'+esc(nomeTipo(it.tipo))+'</b><span>'+esc(it.titulo)+'</span></div>'
+      : '<div class="gq vz"'+atraso+'><span>falta conteúdo pronto</span></div>';
   }
-  g.innerHTML=quadros.join("");
+  g.innerHTML='<div class="sb"><u>9:41</u><s>▮▮▮ ▲ ▰</s></div>'+
+    '<div class="nav"><b>'+esc(arroba)+'</b><span>☰</span></div>'+
+    '<div class="abas"><u class="on">▦</u><u>▷</u><u>☺</u></div>'+
+    '<div class="gr">'+quadros+'</div>'+
+    '<div class="fim"><i></i></div>';
 
   var conta={}; nove.forEach(function(i){ conta[i.tipo]=(conta[i.tipo]||0)+1 });
   var alvos=TIPOS.filter(function(t){return t.alvo>0});
@@ -1247,7 +1433,7 @@ function marca(el){
   olho.observe(el);
 }
 function varre(){
-  [].slice.call(raiz.querySelectorAll(".card, .itens > .item, .grade9, .sem")).forEach(marca);
+  [].slice.call(raiz.querySelectorAll(".card, .itens > .item, .fone-cx, .sem")).forEach(marca);
 }
 
 /* ---- 2. barras crescem e números contam ---- */
