@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Estrutura do Instagram · Studio Miura</title>
+<meta name="description" content="Os dois perfis do Studio Miura: estrutura, banco de conteúdo, grade, calendário e anúncios pagos.">
+<meta name="theme-color" content="#43141D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#F7F2F4; --surface:#FFFFFF; --sunk:#F1E7EB; --line:#E3D2D9; --line2:#CDB4BE;
+  --ink:#1B1619; --ink2:#5F545A; --ink3:#938089;
+  --accent:#C6255C; --accent-soft:#FBE4EC; --on-accent:#FFFFFF;
+  --money:#0B7A5E; --money-soft:#DCF1EA;
+  --warn:#9C6209; --warn-soft:#FAEEDA;
+  --crit:#B03A2E; --crit-soft:#F8E4E1;
+  --info:#255A99; --info-soft:#E2ECF8;
+  --shadow:0 1px 2px rgba(27,22,25,.05), 0 12px 32px -18px rgba(27,22,25,.30);
+  --disp:"Bricolage Grotesque",Georgia,serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#121014; --surface:#1C181B; --sunk:#262026; --line:#352C33; --line2:#473A43;
+  --ink:#F0EBEE; --ink2:#AEA2A9; --ink3:#7E7079;
+  --accent:#F07CA3; --accent-soft:#3A1C28; --on-accent:#1A0C13;
+  --money:#5FCBA8; --money-soft:#123028;
+  --warn:#E0A94F; --warn-soft:#332714;
+  --crit:#E8897B; --crit-soft:#371D19;
+  --info:#8AB6E8; --info-soft:#18283A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -18px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#121014; --surface:#1C181B; --sunk:#262026; --line:#352C33; --line2:#473A43;
+  --ink:#F0EBEE; --ink2:#AEA2A9; --ink3:#7E7079;
+  --accent:#F07CA3; --accent-soft:#3A1C28; --on-accent:#1A0C13;
+  --money:#5FCBA8; --money-soft:#123028;
+  --warn:#E0A94F; --warn-soft:#332714;
+  --crit:#E8897B; --crit-soft:#371D19;
+  --info:#8AB6E8; --info-soft:#18283A;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -18px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding-inline:18px;padding-block:30px 80px}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h1{font-size:clamp(34px,7vw,54px);line-height:1.02;font-weight:800}
+h2{font-size:27px;line-height:1.14}
+h3{font-size:20px;line-height:1.2}
+h4{font-size:16px;line-height:1.25}
+p{margin:0}
+a{color:var(--accent)}
+button{font-family:var(--sans)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font:700 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.lede{color:var(--ink2);max-width:62ch;margin-top:12px;font-size:17px}
+header{display:grid;gap:5px;margin-bottom:26px}
+header .laco{display:inline-block;vertical-align:-3px;margin-right:8px}
+
+.tabs{display:flex;gap:2px;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);background:var(--ground);z-index:9;border-bottom:1px solid var(--line);margin-bottom:26px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:transparent;color:var(--ink2);font:600 14.5px var(--sans);padding:13px 15px;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.panel[hidden]{display:none}
+.stack{display:grid;gap:18px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:13px;align-content:start}
+.card.flat{background:transparent;border-style:dashed}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.two,.three{grid-template-columns:1fr}}
+.card ul,.card ol{margin:0;padding-left:20px;display:grid;gap:7px}
+.muted{color:var(--ink2);font-size:15px}
+.tiny{font-size:13px;color:var(--ink3)}
+code{font:500 13.5px var(--mono);background:var(--sunk);padding:2px 6px;border-radius:5px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+@media (max-width:700px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--surface);padding:15px 16px;display:grid;gap:3px}
+.kpi .k{font:700 10.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.kpi .v{font:600 25px var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi .s{font-size:12.5px;color:var(--ink2)}
+.v.good{color:var(--money)} .v.bad{color:var(--crit)} .v.mid{color:var(--warn)}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.fact{background:var(--sunk);padding:10px 12px;display:grid;gap:2px}
+.fact .k{font:700 10px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+.fact .v{font:600 14px var(--mono);font-variant-numeric:tabular-nums}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+@media (max-width:620px){.split{grid-template-columns:1fr}}
+.split h4{margin-bottom:5px}
+.split ul{margin:0;padding-left:19px;display:grid;gap:5px;font-size:14.5px}
+
+.btn{font:700 14px var(--sans);border:0;background:var(--accent);color:var(--on-accent);padding:11px 18px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.btn.ghost{background:transparent;color:var(--ink2);border:1px solid var(--line)}
+.btn.sm{padding:7px 12px;font-size:12.5px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:default}
+a.btn{text-decoration:none}
+.gcard a{display:block}
+
+.tag{font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:7px;white-space:nowrap}
+.tag.ok{background:var(--money-soft);color:var(--money)}
+.tag.no{background:var(--crit-soft);color:var(--crit)}
+.tag.mid{background:var(--warn-soft);color:var(--warn)}
+.tag.inf{background:var(--info-soft);color:var(--info)}
+.tag.br{background:var(--accent-soft);color:var(--accent)}
+
+.banner{padding:14px 17px;border-radius:11px;background:var(--warn-soft);color:var(--warn);font-size:14.5px;display:grid;gap:5px}
+.banner b{font-weight:700}
+.banner.inf{background:var(--info-soft);color:var(--info)}
+.banner.ok{background:var(--money-soft);color:var(--money)}
+.banner.no{background:var(--crit-soft);color:var(--crit)}
+
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:11px}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.5px;background:var(--surface)}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line)}
+th{font:700 10.5px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);background:var(--sunk);white-space:nowrap}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+
+/* ofertas */
+.gh{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:34px}
+.gh:first-child{margin-top:0}
+.gh .pt{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+.gh h3{flex:none}
+.gh .per{font:700 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.gh .lin{flex:1;min-width:20px;height:1px;background:var(--line)}
+
+.of{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.of-h{padding:18px 21px 16px;display:grid;gap:10px;border-bottom:1px solid var(--line)}
+.of-h .top{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.of-h .idx{font:600 12px var(--mono);color:var(--ink3)}
+.of-h h4{flex:1;min-width:170px;font-family:var(--disp);font-size:19px;font-weight:600}
+.of-pr{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.of-pr .big{font:700 28px var(--mono);letter-spacing:-.02em;color:var(--accent);font-variant-numeric:tabular-nums}
+.of-pr .sub{font-size:14px;color:var(--ink2)}
+.of-pr .brinde{font:600 12.5px var(--sans);background:var(--accent-soft);color:var(--accent);padding:4px 11px;border-radius:999px}
+.of-itens{display:flex;gap:6px;flex-wrap:wrap}
+.of-itens span{font:500 12.5px var(--mono);background:var(--sunk);color:var(--ink2);padding:3px 9px;border-radius:6px}
+.of-b{padding:16px 21px 19px;display:grid;gap:13px}
+.of-nota{font-size:14.5px;color:var(--ink2);border-left:3px solid var(--line2);padding-left:12px}
+
+.txtb{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.txtb .bl{background:var(--surface);padding:13px 16px;display:grid;gap:7px}
+.txtb .k{font:700 10px var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink3)}
+.txtb .t{font-size:14.5px;line-height:1.55;white-space:pre-wrap}
+.txtb .t.arte{font-family:var(--disp);font-size:17.5px;line-height:1.3;font-weight:600}
+.txtb .acts{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+
+/* artes */
+.art-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
+@media (max-width:860px){.art-grid{grid-template-columns:minmax(0,1fr)}}
+.art-pal{display:grid;gap:14px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font:600 13px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink2);padding:7px 13px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.art-prev{background:var(--sunk);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:12px;justify-items:center;position:sticky;top:70px}
+.art-prev canvas{max-width:100%;height:auto;border-radius:9px;box-shadow:var(--shadow);background:#fff}
+.art-prev .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.sel-of{display:grid;gap:7px}
+.sel-of label{font:700 11.5px var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink3)}
+select,input[type=text]{font:15px var(--sans);padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--ground);color:var(--ink);width:100%}
+
+/* calendário */
+.sem{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start}
+@media (max-width:560px){.sem{grid-template-columns:1fr;gap:6px}}
+.sem .when{font:600 12px var(--mono);color:var(--accent);text-transform:uppercase;padding-top:3px}
+.sem .what{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 11px 11px 0;padding:14px 16px;display:grid;gap:7px}
+.sem .what h4{font-family:var(--sans);font-weight:700;font-size:15.5px}
+.sem .what ul{margin:0;padding-left:19px;display:grid;gap:5px;font-size:14.5px;color:var(--ink2)}
+
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+  background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600;
+  box-shadow:var(--shadow);z-index:40}
+.rodape{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink3);display:grid;gap:5px}
+
+/* capa da campanha */
+.capa{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
+  background:var(--sunk);aspect-ratio:21/9;display:block}
+@media (max-width:760px){.capa{aspect-ratio:4/3}}
+.capa img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.capa::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(32,16,22,.74) 0%,rgba(32,16,22,.42) 42%,rgba(32,16,22,.04) 72%)}
+.capa .tx{position:absolute;left:0;top:0;bottom:0;z-index:1;display:grid;align-content:center;gap:9px;
+  padding:26px 30px;max-width:min(560px,68%);color:#fff}
+@media (max-width:620px){.capa .tx{max-width:none;align-content:end;padding:20px 22px}}
+.capa .tx .et{font:700 10.5px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.capa .tx h2{color:#fff;font-size:clamp(22px,3.6vw,32px);line-height:1.08}
+.capa .tx p{color:rgba(255,255,255,.88);font-size:14.5px;line-height:1.5}
+
+/* galeria de artes prontas */
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px}
+.gcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  display:grid;grid-template-rows:auto 1fr}
+.gcard img{width:100%;height:auto;display:block;background:var(--sunk)}
+.gbd{padding:11px 13px;display:grid;gap:8px;align-content:start}
+.gnm{font-weight:600;font-size:13.5px;line-height:1.3}
+.gmeta{font:500 11.5px var(--mono);color:var(--ink3)}
+.gacts{display:flex;gap:6px;flex-wrap:wrap}
+.gfun{justify-self:start;font:700 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 8px;border-radius:999px;background:var(--sunk);color:var(--ink2);border:1px solid var(--line)}
+.ed-grid{display:grid;gap:9px;margin:4px 0 9px}
+.ed-grid label{display:grid;gap:4px;font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink3)}
+.ed-grid input,.ed-grid textarea{font:400 13.5px/1.45 var(--sans);color:var(--ink);background:var(--sunk);
+  border:1px solid var(--line);border-radius:9px;padding:8px 10px;width:100%;resize:vertical;
+  text-transform:none;letter-spacing:0}
+.ed-grid input:focus,.ed-grid textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ed-grid input:disabled{opacity:.42}
+.ed-dupla{display:grid;grid-template-columns:1fr 1fr 74px;gap:7px}
+.modo{font:500 12.5px var(--mono);color:var(--ink3)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ---------- estrutura do instagram ---------- */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;align-items:start}
+.campo{display:grid;gap:4px;margin-bottom:9px}
+.campo>span{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink3)}
+.campo input,.campo textarea,.campo select{font:400 13.5px/1.45 var(--sans);color:var(--ink);background:var(--sunk);
+  border:1px solid var(--line);border-radius:9px;padding:8px 10px;width:100%;resize:vertical}
+.campo input:focus,.campo textarea:focus,.campo select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.chk{display:grid;gap:3px;margin:4px 0 2px}
+.chk button{display:flex;gap:9px;align-items:flex-start;text-align:left;width:100%;
+  background:none;border:0;border-radius:9px;padding:7px 8px;cursor:pointer;color:var(--ink);font:inherit}
+.chk button:hover{background:var(--sunk)}
+.chk .bx{flex:0 0 auto;width:17px;height:17px;border-radius:5px;border:1.5px solid var(--line2);margin-top:2px;
+  display:grid;place-items:center;font-size:11px;color:var(--on-accent)}
+.chk button[aria-pressed="true"] .bx{background:var(--money);border-color:var(--money)}
+.chk button[aria-pressed="true"] .tx{color:var(--ink3);text-decoration:line-through}
+.chk .tx{font-size:13.5px;line-height:1.4}
+.chk .tx i{display:block;font-style:normal;font-size:12px;color:var(--ink3);line-height:1.4;text-decoration:none}
+.itens{display:grid;gap:9px;margin-top:10px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 13px;display:grid;gap:7px}
+.item .lin1{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.item h4{margin:0;font:600 14.5px/1.3 var(--sans)}
+.item p{margin:0;font-size:13px;line-height:1.5;color:var(--ink2);white-space:pre-wrap}
+.tag{font:700 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;padding:3px 7px;border-radius:999px;
+  background:var(--sunk);color:var(--ink2);border:1px solid var(--line);white-space:nowrap}
+.tag.prova{background:var(--info-soft);color:var(--info);border-color:transparent}
+.tag.objecao{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.tag.oferta{background:var(--money-soft);color:var(--money);border-color:transparent}
+.tag.educativo{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.tag.bastidor{background:var(--sunk);color:var(--ink2)}
+.tag.ok{background:var(--money-soft);color:var(--money);border-color:transparent}
+.tag.pend{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.filtros{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:8px 0 2px}
+.filtros select{font:500 12.5px var(--sans);background:var(--sunk);border:1px solid var(--line);
+  border-radius:999px;padding:6px 10px;color:var(--ink)}
+.placar{display:grid;gap:8px;margin-top:6px}
+.pl{display:grid;grid-template-columns:132px 1fr 68px;gap:10px;align-items:center;font-size:13px}
+.pl .bar{height:9px;border-radius:999px;background:var(--sunk);overflow:hidden}
+.pl .bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.pl .bar i.ok{background:var(--money)}
+.pl .n{font:600 12px var(--mono);color:var(--ink3);text-align:right}
+.grade9{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:360px;
+  border:1px solid var(--line);border-radius:12px;padding:4px;background:var(--surface)}
+.quad{aspect-ratio:1;border-radius:7px;background:var(--sunk);display:grid;align-content:center;
+  padding:7px;gap:3px;overflow:hidden}
+.quad b{font:700 9.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.quad span{font-size:11.5px;line-height:1.25;color:var(--ink2);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.quad.vazio{opacity:.45}
+.sem{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:8px}
+.dia{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px;display:grid;gap:5px;min-height:92px}
+.dia>b{font:700 10px var(--mono);letter-spacing:.05em;color:var(--ink3);text-transform:uppercase}
+.dia select{font:500 11.5px var(--sans);background:var(--sunk);border:1px solid var(--line);
+  border-radius:7px;padding:4px 5px;color:var(--ink);width:100%}
+.dia.hoje{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.anu{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:4px}
+.anu .fx{background:var(--sunk);border-radius:10px;padding:9px 11px;display:grid;gap:2px}
+.anu .fx b{font:700 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.anu .fx span{font:700 19px var(--disp);color:var(--ink)}
+.anu .fx span.bom{color:var(--money)} .anu .fx span.ruim{color:var(--crit)}
+.prop{margin:7px 0 2px;padding:9px 11px;background:var(--sunk);border-radius:9px;
+  font:500 12.5px/1.5 var(--mono);white-space:pre-wrap;word-break:break-word;color:var(--ink2)}
+.vazio-msg{color:var(--ink3);font-size:13px;padding:14px;text-align:center;
+  border:1px dashed var(--line2);border-radius:12px}
+@media(max-width:620px){
+  .sem{grid-template-columns:repeat(2,1fr)}
+  .pl{grid-template-columns:104px 1fr 56px}
+}
+</style>
+
+<style>
+/* ======================= MARSALA E CREME ENVELHECIDO =======================
+   Os tokens da base são redefinidos aqui. Como esta folha vem depois, ganha. */
+:root{
+  --ground:#F2E7D5; --surface:#FCF6EB; --sunk:#E9DBC4; --line:#DBC7A9; --line2:#C3A882;
+  --ink:#2B1016; --ink2:#67474C; --ink3:#9A7F6D;
+  --accent:#7B2D3B; --accent-soft:#F1DCDE; --on-accent:#FCF6EB;
+  --money:#55713F; --money-soft:#E5EBD9;
+  --warn:#966218; --warn-soft:#F6E8CC;
+  --crit:#A5392C; --crit-soft:#F7DED8;
+  --info:#44607A; --info-soft:#E1E8EE;
+  --ouro:#B8912F; --ouro-sw:rgba(184,145,47,.22);
+  --marsala-d:#43141D;
+  --shadow:0 1px 2px rgba(67,20,29,.06), 0 18px 44px -26px rgba(67,20,29,.42);
+  --mola:cubic-bezier(.2,.76,.24,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#170E11; --surface:#211418; --sunk:#2C191E; --line:#3C262C; --line2:#55343C;
+  --ink:#F4E7D6; --ink2:#C6AC9C; --ink3:#99806F;
+  --accent:#D2808D; --accent-soft:#3A1A21; --on-accent:#1B0A0F;
+  --money:#9BBE84; --money-soft:#1D2A17;
+  --warn:#D9A95A; --warn-soft:#332513;
+  --crit:#E0897A; --crit-soft:#391C18;
+  --info:#8FB0CE; --info-soft:#19242E;
+  --ouro:#DCBA6A; --ouro-sw:rgba(220,186,106,.24);
+  --marsala-d:#F4E7D6;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 44px -24px rgba(0,0,0,.9);
+}}
+:root[data-theme="dark"]{
+  --ground:#170E11; --surface:#211418; --sunk:#2C191E; --line:#3C262C; --line2:#55343C;
+  --ink:#F4E7D6; --ink2:#C6AC9C; --ink3:#99806F;
+  --accent:#D2808D; --accent-soft:#3A1A21; --on-accent:#1B0A0F;
+  --money:#9BBE84; --money-soft:#1D2A17;
+  --warn:#D9A95A; --warn-soft:#332513;
+  --crit:#E0897A; --crit-soft:#391C18;
+  --info:#8FB0CE; --info-soft:#19242E;
+  --ouro:#DCBA6A; --ouro-sw:rgba(220,186,106,.24);
+  --marsala-d:#F4E7D6;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 18px 44px -24px rgba(0,0,0,.9);
+}
+
+/* papel envelhecido: o fundo não é chapado, tem grão e luz vinda de cima */
+body{
+  background:
+    radial-gradient(1100px 520px at 12% -8%, var(--accent-soft) 0%, transparent 62%),
+    radial-gradient(900px 480px at 92% 4%, var(--ouro-sw) 0%, transparent 58%),
+    var(--ground);
+  background-attachment:fixed;
+}
+
+/* ---------------------------- a abertura ---------------------------- */
+.hero{
+  position:relative; overflow:hidden; isolation:isolate;
+  border-radius:calc(var(--r) + 6px);
+  padding:46px 34px 40px;
+  background:linear-gradient(152deg, var(--marsala-grad1,#7B2D3B) 0%, #5E1F2B 46%, #43141D 100%);
+  color:#F7EADF;
+  box-shadow:0 26px 60px -34px rgba(67,20,29,.85);
+}
+.hero::before{
+  content:""; position:absolute; inset:-30%; z-index:-1;
+  background:
+    radial-gradient(42% 42% at 24% 28%, rgba(220,186,106,.30) 0%, transparent 70%),
+    radial-gradient(38% 38% at 78% 72%, rgba(242,231,213,.20) 0%, transparent 72%);
+  animation:deriva 22s ease-in-out infinite alternate;
+}
+.hero::after{
+  content:""; position:absolute; left:34px; right:34px; bottom:0; height:1px; z-index:-1;
+  background:linear-gradient(90deg, transparent, var(--ouro), transparent);
+  opacity:.65;
+}
+@keyframes deriva{
+  from{ transform:translate3d(-3%,-2%,0) scale(1) }
+  to  { transform:translate3d(4%,3%,0) scale(1.1) }
+}
+.hero .eyebrow{ color:var(--ouro); letter-spacing:.16em }
+.hero h1{
+  color:#FDF6EC; margin:.28em 0 .22em; letter-spacing:-.015em;
+  font-size:clamp(30px,5.4vw,50px); line-height:1.02;
+}
+.hero h1 em{ font-style:normal; color:var(--ouro) }
+.hero .lede{ color:rgba(247,234,223,.84); max-width:62ch }
+.hero .selo{
+  display:inline-flex; gap:7px; align-items:center; margin-top:16px;
+  font:700 10.5px var(--mono); letter-spacing:.14em; text-transform:uppercase;
+  padding:7px 13px; border-radius:999px;
+  border:1px solid rgba(220,186,106,.45); color:var(--ouro);
+  background:rgba(67,20,29,.42);
+}
+.hero .selo i{ width:6px; height:6px; border-radius:50%; background:var(--ouro); font-style:normal;
+  animation:pulso 2.6s ease-in-out infinite }
+@keyframes pulso{ 0%,100%{opacity:.35;transform:scale(.8)} 50%{opacity:1;transform:scale(1.25)} }
+
+/* ---------------------------- abas ---------------------------- */
+.tabs{ position:sticky; top:0; z-index:30; padding:9px 2px; margin-bottom:4px;
+  background:var(--ground);
+  background:color-mix(in srgb, var(--ground) 86%, transparent);
+  backdrop-filter:blur(12px) saturate(1.3); border-radius:999px }
+.tab{ position:relative; transition:color .28s var(--mola), background .28s var(--mola) }
+.tab::after{
+  content:""; position:absolute; left:14px; right:14px; bottom:5px; height:2px; border-radius:2px;
+  background:var(--ouro); transform:scaleX(0); transform-origin:center;
+  transition:transform .42s var(--mola);
+}
+.tab[aria-selected="true"]::after{ transform:scaleX(1) }
+
+/* ---------------------------- entrada dos painéis ---------------------------- */
+.panel:not([hidden]){ animation:entra .5s var(--mola) both }
+@keyframes entra{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none} }
+
+/* ---------------------------- revelação no rolar ---------------------------- */
+.rv{ opacity:0; transform:translateY(16px); transition:opacity .66s var(--mola), transform .66s var(--mola) }
+.rv.on{ opacity:1; transform:none }
+
+/* ---------------------------- matéria ---------------------------- */
+.card{ transition:box-shadow .34s var(--mola), border-color .34s var(--mola) }
+.card:hover{ border-color:var(--line2) }
+.item,.gcard,.quad{ transition:transform .3s var(--mola), box-shadow .3s var(--mola), background .3s var(--mola) }
+.item:hover,.gcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow) }
+.btn{ transition:transform .2s var(--mola), box-shadow .2s var(--mola), filter .2s var(--mola) }
+.btn:hover{ transform:translateY(-1px); filter:saturate(1.08) }
+.btn:active{ transform:translateY(1px) }
+.tag{ transition:transform .22s var(--mola) }
+.item:hover .tag{ transform:translateY(-1px) }
+
+/* barras que crescem */
+.pl .bar i{ width:0; transition:width 1.05s var(--mola) }
+.pl .n{ font-variant-numeric:tabular-nums }
+
+/* grade: cada quadro entra em cascata e cresce no toque */
+.quad{ animation:quadIn .5s var(--mola) both }
+.quad:nth-child(1){animation-delay:.02s} .quad:nth-child(2){animation-delay:.06s}
+.quad:nth-child(3){animation-delay:.10s} .quad:nth-child(4){animation-delay:.14s}
+.quad:nth-child(5){animation-delay:.18s} .quad:nth-child(6){animation-delay:.22s}
+.quad:nth-child(7){animation-delay:.26s} .quad:nth-child(8){animation-delay:.30s}
+.quad:nth-child(9){animation-delay:.34s}
+@keyframes quadIn{ from{opacity:0; transform:scale(.94)} to{opacity:1; transform:none} }
+.quad:hover{ transform:scale(1.04); background:var(--accent-soft) }
+.grade9{ background:linear-gradient(160deg, var(--surface), var(--sunk)); box-shadow:var(--shadow) }
+
+/* anel do checklist */
+.anel{ position:relative; width:46px; height:46px; flex:0 0 auto }
+.anel svg{ width:100%; height:100%; transform:rotate(-90deg) }
+.anel circle{ fill:none; stroke-width:3.5; stroke-linecap:round }
+.anel circle.t{ stroke:var(--sunk) }
+.anel circle.p{ stroke:var(--accent); transition:stroke-dashoffset 1s var(--mola) }
+.anel b{ position:absolute; inset:0; display:grid; place-items:center;
+  font:700 11px var(--mono); color:var(--ink2) }
+.anel.cheio circle.p{ stroke:var(--money) }
+.linha-anel{ display:flex; align-items:center; gap:11px; margin:10px 0 2px }
+.linha-anel span{ font:600 11px var(--mono); letter-spacing:.05em; text-transform:uppercase; color:var(--ink3) }
+
+/* campos com foco mais vivo */
+.campo input,.campo textarea,.campo select{ transition:border-color .24s var(--mola), background .24s var(--mola) }
+.campo input:hover,.campo textarea:hover{ border-color:var(--line2) }
+
+/* fita dourada no topo de cada cartão de destaque */
+.banner{ animation:entra .5s var(--mola) both }
+
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero::before,.hero .selo i{animation:none}
+  .panel:not([hidden]),.quad,.banner{animation:none}
+  .pl .bar i{transition:none}
+  *{scroll-behavior:auto}
+}
+@media(max-width:620px){ .hero{padding:34px 20px 30px} .tabs{top:0} }
+</style>
+
+</head>
+<body>
+<header>
+  <div class="hero">
+    <span class="eyebrow">Studio Miura · Fazenda Rio Grande</span>
+    <h1>Estrutura do <em>Instagram</em></h1>
+    <p class="lede">Os dois perfis lado a lado: o que cada um faz, o que entra em cada quadro, em que dia sai e quanto custa o que está no ar pago. Tudo que você jogar aqui fica guardado e vira a grade.</p>
+    <span class="selo"><i></i><span id="heroSelo">carregando</span></span>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Seções">
+  <button class="tab" role="tab" id="t-vis" aria-controls="p-vis" aria-selected="true">Onde estamos</button>
+  <button class="tab" role="tab" id="t-per" aria-controls="p-per" aria-selected="false">Os dois perfis</button>
+  <button class="tab" role="tab" id="t-ban" aria-controls="p-ban" aria-selected="false">Banco</button>
+  <button class="tab" role="tab" id="t-gra" aria-controls="p-gra" aria-selected="false">Grade e calendário</button>
+  <button class="tab" role="tab" id="t-anu" aria-controls="p-anu" aria-selected="false">Anúncios pagos</button>
+</nav>
+
+
+<!-- ================= ONDE ESTAMOS ================= -->
+<section class="panel stack" id="p-vis" role="tabpanel" aria-labelledby="t-vis">
+
+  <div class="card">
+    <span class="eyebrow">O retrato de hoje</span>
+    <h2>64 posts analisados, três buracos</h2>
+    <p class="muted">Isto vem da triagem da grade que a gente fez em setembro, na aba <b>Instagram</b>. Não é opinião: é a contagem dos 64 quadros que estavam no ar.</p>
+    <div class="placar" id="visTipos"></div>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Os três furos</span>
+    <h2>O que a grade não estava fazendo</h2>
+    <div class="banner no">
+      <b>Preço aparecia em 5 posts de 64.</b>
+      <span>E a isca mais barata do studio — <b>axilas a partir de R$ 46</b> — não estava em nenhum. Anúncio sem preço gasta alcance atraindo quem não ia pagar.</span>
+    </div>
+    <div class="banner at">
+      <b>17 quadros de data comemorativa e bom dia.</b>
+      <span>Um quarto da grade ocupado por post que não vende, não ensina e não prova nada. Esse tipo de conteúdo é de <b>story</b>: some em 24 horas e não rouba quadro.</span>
+    </div>
+    <div class="banner no">
+      <b>Nenhum CTA de agendamento.</b>
+      <span>Nenhum dos 64 posts terminava mandando a pessoa chamar no WhatsApp. O perfil contava o serviço e deixava a cliente decidir sozinha o que fazer com aquilo.</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">A mistura a perseguir</span>
+    <h2>A cada dez quadros do feed</h2>
+    <div class="placar" id="visMix"></div>
+    <p class="muted">Data comemorativa e frase de bom dia continuam existindo — <b>no story</b>. O feed é vitrine permanente; o story é conversa do dia.</p>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Quem quase não aparece</span>
+    <h2>Três públicos que valem campanha própria</h2>
+    <ul class="muted">
+      <li><b>Homem</b> — barba, costas, peito. Eram 4 posts em 64, e é o público que menos disputa leilão de anúncio aqui na Fazenda.</li>
+      <li><b>Quem já tentou e desistiu da lâmina</b> — irritação, pelo encravado, foliculite. É a dor que a meia perna resolve.</li>
+      <li><b>Quem acha caro</b> — a conta do laser contra o custo de uma vida de lâmina e cera. Quebra de objeção pura.</li>
+    </ul>
+  </div>
+
+  <div class="card flat">
+    <span class="eyebrow">Como esta página guarda as coisas</span>
+    <p class="muted" id="visModo">Verificando onde salvar…</p>
+  </div>
+
+</section>
+
+
+<!-- ================= OS DOIS PERFIS ================= -->
+<section class="panel stack" id="p-per" role="tabpanel" aria-labelledby="t-per" hidden>
+
+  <div class="card">
+    <span class="eyebrow">Divisão de trabalho</span>
+    <h2>Dois perfis, dois papéis</h2>
+    <p class="muted">Os dois não podem postar a mesma coisa — se postarem, um canibaliza o outro e a mesma pessoa vê o mesmo conteúdo duas vezes. O do <b>Studio</b> é vitrine e catálogo: prova, oferta, preço, agendamento. O <b>seu</b> é rosto e confiança: bastidor, quem atende, rotina, indicação. O seu manda gente para o do Studio; o do Studio fecha.</p>
+  </div>
+
+  <div class="duo" id="perfis"></div>
+
+</section>
+
+
+<!-- ================= BANCO ================= -->
+<section class="panel stack" id="p-ban" role="tabpanel" aria-labelledby="t-ban" hidden>
+
+  <div class="card">
+    <span class="eyebrow">Banco de conteúdo</span>
+    <h2>Jogue tudo aqui</h2>
+    <p class="muted">Anúncio, oferta, ideia solta, print de cliente elogiando, assunto que você não quer esquecer. Cada coisa vira um item com tipo e perfil de destino — e o que estiver marcado como <b>pronto</b> entra na grade e no calendário.</p>
+    <div class="campo"><span>Tipo</span>
+      <select id="bTipo"></select>
+    </div>
+    <div class="campo"><span>Vai para qual perfil</span>
+      <select id="bPerfil">
+        <option value="studio">Studio Miura</option>
+        <option value="pessoal">Meu perfil</option>
+        <option value="dois">Os dois</option>
+      </select>
+    </div>
+    <div class="campo"><span>Título — do que se trata</span><input type="text" id="bTitulo" placeholder="Ex.: Antes e depois da virilha, 6 sessões"></div>
+    <div class="campo"><span>Texto, legenda ou observação</span><textarea id="bTexto" rows="4" placeholder="A legenda pronta, ou só a ideia do que escrever."></textarea></div>
+    <div class="campo"><span>Link da arte, do vídeo ou da referência</span><input type="text" id="bLink" placeholder="Opcional"></div>
+    <div class="campo"><span>Situação</span>
+      <select id="bStatus">
+        <option value="ideia">Ideia — ainda falta fazer</option>
+        <option value="pronto">Pronto para postar</option>
+        <option value="postado">Já postado</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap">
+      <button class="btn" id="bAdd">Guardar no banco</button>
+      <button class="btn ghost" id="bOfertas">Trazer as 11 ofertas de outubro</button>
+    </div>
+    <span class="tiny" id="bStatusMsg"></span>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">O que já está guardado</span>
+    <h2>O banco</h2>
+    <div class="filtros">
+      <select id="fTipo"><option value="">Todos os tipos</option></select>
+      <select id="fPerfil">
+        <option value="">Os dois perfis</option>
+        <option value="studio">Studio Miura</option>
+        <option value="pessoal">Meu perfil</option>
+      </select>
+      <select id="fStatus">
+        <option value="">Qualquer situação</option>
+        <option value="ideia">Ideia</option>
+        <option value="pronto">Pronto</option>
+        <option value="postado">Postado</option>
+      </select>
+      <span class="tiny" id="bConta"></span>
+    </div>
+    <div class="itens" id="bLista"></div>
+  </div>
+
+</section>
+
+
+<!-- ================= GRADE E CALENDÁRIO ================= -->
+<section class="panel stack" id="p-gra" role="tabpanel" aria-labelledby="t-gra" hidden>
+
+  <div class="card">
+    <span class="eyebrow">A grade</span>
+    <h2>Como os próximos nove quadros ficam</h2>
+    <p class="muted">Os nove itens mais antigos do banco marcados como <b>pronto</b>, na ordem em que entrariam. É o que a pessoa vê quando abre o perfil e decide em dois segundos se segue.</p>
+    <div class="filtros">
+      <select id="gPerfil">
+        <option value="studio">Grade do Studio Miura</option>
+        <option value="pessoal">Grade do meu perfil</option>
+      </select>
+    </div>
+    <div class="grade9" id="grade9"></div>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Conferência</span>
+    <h2>A mistura desses nove bate com o alvo?</h2>
+    <div class="placar" id="gPlacar"></div>
+    <span class="tiny" id="gAviso"></span>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Calendário</span>
+    <h2>Quatro semanas</h2>
+    <p class="muted">Escolha em cada dia o que sai. Só aparecem na lista os itens do banco que estão <b>prontos</b>. O dia de hoje fica marcado.</p>
+    <div id="calendario"></div>
+  </div>
+
+</section>
+
+
+<!-- ================= ANÚNCIOS ================= -->
+<section class="panel stack" id="p-anu" role="tabpanel" aria-labelledby="t-anu" hidden>
+
+  <div class="card">
+    <span class="eyebrow">O que está no ar</span>
+    <h2>Resumo do dinheiro</h2>
+    <div class="anu" id="anuResumo"></div>
+    <span class="tiny">Custo por conversa e por agendamento saem do que você preencher em cada campanha. Sem gasto preenchido, não dá conta.</span>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Nova campanha</span>
+    <h2>Pôr um anúncio na conta</h2>
+    <div class="campo"><span>Nome da campanha</span><input type="text" id="aNome" placeholder="Ex.: Axilas R$ 46 · mensagens"></div>
+    <div class="campo"><span>Perfil que anuncia</span>
+      <select id="aPerfil">
+        <option value="studio">Studio Miura</option>
+        <option value="pessoal">Meu perfil</option>
+      </select>
+    </div>
+    <div class="campo"><span>Objetivo</span>
+      <select id="aObj">
+        <option value="mensagens">Mensagens no WhatsApp</option>
+        <option value="perfil">Visitas ao perfil</option>
+        <option value="alcance">Alcance e reconhecimento</option>
+        <option value="seguidores">Seguidores</option>
+      </select>
+    </div>
+    <div class="campo"><span>Criativo usado</span><input type="text" id="aCria" placeholder="Qual arte ou vídeo está rodando"></div>
+    <div class="duo">
+      <div class="campo"><span>Verba por dia (R$)</span><input type="text" id="aDia" inputmode="decimal" placeholder="20"></div>
+      <div class="campo"><span>Dias no ar</span><input type="text" id="aDias" inputmode="numeric" placeholder="7"></div>
+      <div class="campo"><span>Já gasto (R$)</span><input type="text" id="aGasto" inputmode="decimal" placeholder="0"></div>
+      <div class="campo"><span>Conversas que chegaram</span><input type="text" id="aConv" inputmode="numeric" placeholder="0"></div>
+      <div class="campo"><span>Agendamentos fechados</span><input type="text" id="aAgen" inputmode="numeric" placeholder="0"></div>
+      <div class="campo"><span>Ticket do que foi vendido (R$)</span><input type="text" id="aTicket" inputmode="decimal" placeholder="499"></div>
+    </div>
+    <div class="campo"><span>Situação</span>
+      <select id="aSit">
+        <option value="no-ar">No ar</option>
+        <option value="pausado">Pausado</option>
+        <option value="encerrado">Encerrado</option>
+      </select>
+    </div>
+    <button class="btn" id="aAdd">Guardar campanha</button>
+  </div>
+
+  <div class="card">
+    <span class="eyebrow">Campanhas</span>
+    <h2>Uma por uma</h2>
+    <div class="itens" id="aLista"></div>
+  </div>
+
+</section>
+
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i)};
+var brl=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"});
+var brl0=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+
+/* ---------- abas ---------- */
+var tabs=[].slice.call(document.querySelectorAll(".tab"));
+function showTab(id){
+  tabs.forEach(function(t){
+    var on=t.id===id;
+    t.setAttribute("aria-selected",String(on));
+    $(t.getAttribute("aria-controls")).hidden=!on;
+  });
+  try{localStorage.setItem("miura-ig-tab",id)}catch(e){}
+}
+tabs.forEach(function(t){t.addEventListener("click",function(){showTab(t.id)})});
+try{var sv=localStorage.getItem("miura-ig-tab");if(sv&&$(sv))showTab(sv)}catch(e){}
+
+function toast(m){
+  var t=document.createElement("div");
+  t.className="toast"; t.textContent=m;
+  document.body.appendChild(t);
+  setTimeout(function(){t.remove()},1900);
+}
+function copiar(txt,m){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){toast(m||"Copiado")},function(){toast("Não deu para copiar")});
+  }else{
+    var a=document.createElement("textarea");
+    a.value=txt; (window.document.body||document.body).appendChild(a); a.select();
+    try{document.execCommand("copy");toast(m||"Copiado")}catch(e){toast("Não deu para copiar")}
+    a.remove();
+  }
+}
+function esc(s){
+  return String(s==null?"":s).replace(/[&<>"]/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];
+  });
+}
+function num(v){
+  var n=parseFloat(String(v==null?"":v).replace(/\s/g,"").replace(/\./g,"").replace(",","."));
+  return isFinite(n)?n:0;
+}
+
+/* ================= O QUE SE SABE (vem da triagem dos 64 posts) ================= */
+var TIPOS=[
+  {id:"prova",     n:"Prova de atendimento", desc:"aparelho, pele, antes e depois", hoje:12, alvo:4},
+  {id:"objecao",   n:"Quebra de objeção",    desc:"preço, dor, “não funciona em mim”", hoje:4, alvo:2},
+  {id:"oferta",    n:"Oferta com preço",     desc:"preço na tela e chamada para o WhatsApp", hoje:5, alvo:2},
+  {id:"educativo", n:"Educativo",            desc:"foliculite, cuidado pós, regiões", hoje:7, alvo:1},
+  {id:"bastidor",  n:"Bastidor",             desc:"o rosto de quem atende", hoje:5, alvo:1},
+  {id:"marca",     n:"Marca",                desc:"identidade, espaço, logo", hoje:10, alvo:0},
+  {id:"data",      n:"Data comemorativa",    desc:"vai para o story, não para o feed", hoje:10, alvo:0},
+  {id:"frase",     n:"Frase de bom dia",     desc:"vai para o story, não para o feed", hoje:7, alvo:0},
+  {id:"sorteio",   n:"Sorteio",              desc:"campanha pontual", hoje:4, alvo:0}
+];
+var TIPO={}; TIPOS.forEach(function(t){TIPO[t.id]=t});
+var OFERTAS=[{"id": "vcp", "grupo": "laser", "nome": "Virilha completa com perianal", "total": 799.0, "parcela": 79.9, "parcelas": 10, "publico": true, "whats": "Oi! Vi o pacote de virilha completa com perianal, 10 sessões em 10x de R$ 79,90 com manicure de brinde. Queria saber os horários."}, {"id": "vca", "grupo": "laser", "nome": "Virilha cavada", "total": 499.0, "parcela": 49.9, "parcelas": 10, "publico": true, "whats": "Oi! Vi o pacote de virilha cavada, 10 sessões em 10x de R$ 49,90 com design de brinde. Tem horário esta semana?"}, {"id": "mpe", "grupo": "laser", "nome": "Meia perna", "total": 689.0, "parcela": 68.9, "parcelas": 10, "publico": true, "whats": "Oi! Vi o pacote de meia perna, 10 sessões em 10x de R$ 68,90 com pedicure de brinde. Queria saber os horários."}, {"id": "cb1", "grupo": "combo", "nome": "Unha em gel + pedicure + axila a laser", "total": 264.98, "parcela": 0, "parcelas": 0, "publico": true, "whats": "Oi! Vi o combo de unha em gel, pedicure e axila a laser por R$ 264,98. Que dias vocês têm?"}, {"id": "cb2", "grupo": "combo", "nome": "Cílios fio a fio + sobrancelha + manicure", "total": 190.0, "parcela": 0, "parcelas": 0, "publico": true, "whats": "Oi! Vi o combo de cílios fio a fio, sobrancelha e manicure por R$ 190. Tem horário esta semana?"}, {"id": "cb3", "grupo": "combo", "nome": "Cílios egípcio + esmaltação em gel", "total": 240.0, "parcela": 0, "parcelas": 0, "publico": true, "whats": "Oi! Vi o combo de cílios egípcio com esmaltação em gel por R$ 240. Queria marcar."}, {"id": "cb4", "grupo": "combo", "nome": "Manicure tradicional pé e mão", "total": 85.0, "parcela": 0, "parcelas": 0, "publico": true, "whats": "Oi! Queria marcar o pé e mão por R$ 85. Que horários vocês têm?"}, {"id": "fa1", "grupo": "facial", "nome": "Botox no terço superior", "total": 599.9, "parcela": 0, "parcelas": 0, "publico": false, "whats": "Oi! O Botox no terço superior fica R$ 599,90, com a [nome], [registro]. A gente marca o seu horário e, no dia, ela confere a indicação antes de aplicar. Qual dia fica melhor para você?"}, {"id": "fa2", "grupo": "facial", "nome": "Preenchimento labial 1 ml", "total": 750.0, "parcela": 0, "parcelas": 0, "publico": false, "whats": "Oi! O preenchimento labial de 1 ml fica R$ 750,00, com a [nome], [registro]. Quer que eu veja um horário para você?"}, {"id": "fa3", "grupo": "facial", "nome": "Olheiras + 1 ml labial", "total": 1500.0, "parcela": 0, "parcelas": 0, "publico": false, "whats": "Oi! O preenchimento de olheiras com 1 ml labial fica R$ 1.500,00, com a [nome], [registro]. Quer que eu veja um horário para você?"}, {"id": "fa4", "grupo": "facial", "nome": "Botox terço superior + preenchimento labial", "total": 1500.0, "parcela": 0, "parcelas": 0, "publico": false, "whats": "Oi! Os dois juntos, Botox no terço superior e 1 ml labial, ficam R$ 1.500,00 com a [nome], [registro]. Quer que eu veja um horário para você?"}];
+var PERFIS=[
+  {id:"studio", n:"Studio Miura", papel:"Vitrine e catálogo. Prova, oferta, preço e agendamento.",
+   bioSug:"Depilação a laser · Fazenda Rio Grande\nAxilas a partir de R$ 46 · pacotes em 10x\nAgende pelo WhatsApp ↓",
+   nomeSug:"Depilação a Laser · Fazenda Rio Grande",
+   destSug:"Antes e depois · Preços · Como funciona · Dúvidas · O espaço · Agendar"},
+  {id:"pessoal", n:"Meu perfil · @saezju", papel:"Rosto e confiança. Bastidor, rotina, quem atende, indicação.",
+   arrobaSug:"@saezju",
+   bioSug:"Ju Félix · sócia do Studio Miura\nBastidor de quem cuida da sua pele em Fazenda Rio Grande\nO studio fica aqui ↓",
+   nomeSug:"Ju Félix · Studio Miura",
+   destSug:"Meu dia · O studio · Resultados · Responde",
+   hoje:{arroba:"@saezju", nome:"Ju Félix", posts:17, seguidores:43, seguindo:289,
+         bio:"♡ Data Analytics\n♡ SQL ♡ Planejamento financeiro", link:"guns.lol/ju"},
+   proposta:{nome:"Ju Félix · Studio Miura",
+     bio:"Ju Félix · sócia do Studio Miura ♡\nData Analytics · SQL · Planejamento financeiro\nBeleza em Fazenda Rio Grande — agenda aqui ↓",
+     link:"wa.me/5541995442525?text=Oi!%20Vim%20pelo%20seu%20perfil%20e%20queria%20agendar",
+     destaques:"O studio · Resultados · Preços · Meu dia · Agendar"}}
+];
+var CHECK=[
+  ["nome","Nome de busca com o serviço e a cidade","O campo Nome é o único que o Instagram indexa na busca. “Studio Miura” sozinho não acha ninguém; “Depilação a Laser · Fazenda Rio Grande” acha."],
+  ["bio","Bio com a oferta de entrada e o preço","Quem chega quer saber o que custa. A isca de axilas a R$ 46 é a frase mais barata de testar."],
+  ["link","Link indo direto para o WhatsApp com mensagem pronta","wa.me com texto preenchido. Link que leva para um menu perde metade das pessoas no caminho."],
+  ["botao","Botão de contato configurado no perfil","WhatsApp e telefone, não só o link da bio."],
+  ["end","Endereço e horário no perfil","R. César Carelli, 365 — Lj 17, Pioneiros. Perfil local sem endereço não aparece em busca por região."],
+  ["dest","Destaques nomeados, com capa, na ordem certa","Antes e depois primeiro, preço em segundo. Destaque é a vitrine de quem chegou agora."],
+  ["foto","Foto de perfil legível em um centímetro","Teste: diminua a imagem até o tamanho de uma unha. Se não dá para entender, não serve."],
+  ["conta","Conta comercial com os insights ligados","Sem isso não dá para saber de onde veio quem chegou, e aí anúncio vira aposta."]
+];
+
+/* ================= ONDE SALVAR =================
+   No painel do claude.ai existe banco compartilhado. No arquivo solto da
+   pasta, cai no navegador — e aí cada computador tem os seus dados. */
+function Loja(nome,aoMudar,aoCarregar){
+  var dados={}, col=null, chave="miura-ig-"+nome;
+  try{ dados=JSON.parse(localStorage.getItem(chave)||"{}")||{} }catch(e){ dados={} }
+  function salvaLocal(){ try{ localStorage.setItem(chave,JSON.stringify(dados)) }catch(e){} }
+  this.todos=function(){ return dados };
+  this.get=function(id){ return dados[id] };
+  this.set=function(id,obj){
+    dados[id]=obj; aoMudar(dados);
+    if(col) col.doc(id).set(obj).catch(function(){ toast("Não deu para salvar agora") });
+    else salvaLocal();
+  };
+  this.del=function(id){
+    delete dados[id]; aoMudar(dados);
+    if(col) col.doc(id).delete().catch(function(){});
+    else salvaLocal();
+  };
+  this.liga=function(d){
+    col=d.collection(nome);
+    var primeira=true;
+    col.onSnapshot(function(sn){
+      dados={}; sn.docs.forEach(function(x){ dados[x.id]=x.data() });
+      if(primeira){ primeira=false; if(aoCarregar) aoCarregar() }
+      aoMudar(dados);
+    },function(){});
+  };
+}
+var lojaPerfis   = new Loja("ig_perfis",   function(){ desenhaPerfis() }, function(){ semeia() });
+var lojaConteudo = new Loja("ig_conteudo", function(){ desenhaBanco(); desenhaGrade(); desenhaCalendario() });
+var lojaAgenda   = new Loja("ig_agenda",   function(){ desenhaCalendario() });
+var lojaAnuncios = new Loja("ig_anuncios", function(){ desenhaAnuncios() });
+
+if(window.claude&&window.claude.use){
+  window.claude.use("db").then(function(d){
+    if(!d){ modoLocal(); return }
+    lojaPerfis.liga(d); lojaConteudo.liga(d); lojaAgenda.liga(d); lojaAnuncios.liga(d);
+    $("visModo").innerHTML="Salvando no <b>banco do painel</b>. O que você escrever aqui aparece em qualquer aparelho que abra o painel pelo claude.ai.";
+  },modoLocal);
+}else{ modoLocal() }
+function modoLocal(){
+  semeia();
+  $("visModo").innerHTML="Salvando <b>neste navegador</b>. Funciona offline e não se perde ao fechar — mas fica só neste computador. Abrindo o painel pelo claude.ai, o mesmo conteúdo vai para o banco compartilhado.";
+}
+
+/* ================= ONDE ESTAMOS ================= */
+function barra(nome,desc,valor,maximo,ok){
+  var pct=maximo?Math.min(100,Math.round(valor/maximo*100)):0;
+  return '<div class="pl"><div><b>'+esc(nome)+'</b><br><span class="tiny">'+esc(desc)+'</span></div>'+
+    '<div class="bar"><i class="'+(ok?"ok":"")+'" style="width:'+pct+'%"></i></div>'+
+    '<div class="n">'+valor+'</div></div>';
+}
+(function(){
+  var maior=Math.max.apply(null,TIPOS.map(function(t){return t.hoje}));
+  $("visTipos").innerHTML=TIPOS.map(function(t){
+    return barra(t.n,t.desc+" · "+t.hoje+" de 64",t.hoje,maior,false);
+  }).join("");
+  $("visMix").innerHTML=TIPOS.filter(function(t){return t.alvo>0}).map(function(t){
+    return barra(t.n,t.desc,t.alvo,4,true);
+  }).join("");
+})();
+
+/* ================= OS DOIS PERFIS ================= */
+/* O que já se sabe do perfil entra sozinho na primeira vez — e só se o
+   campo estiver vazio, para nunca passar por cima do que ele escreveu. */
+function semeia(){
+  PERFIS.forEach(function(p){
+    if(!p.hoje) return;
+    var d=lojaPerfis.get(p.id);
+    if(d && (d.arroba||d.bio||d.nome)) return;
+    lojaPerfis.set(p.id,{arroba:p.hoje.arroba,nome:p.hoje.nome,bio:p.hoje.bio,
+                         link:p.hoje.link,destaques:"",feito:(d&&d.feito)||{}});
+  });
+}
+function dadosPerfil(id){
+  var d=lojaPerfis.get(id)||{};
+  return {arroba:d.arroba||"",nome:d.nome||"",bio:d.bio||"",link:d.link||"",destaques:d.destaques||"",feito:d.feito||{}};
+}
+function salvaPerfil(id,campo,valor){
+  var d=dadosPerfil(id); d[campo]=valor; lojaPerfis.set(id,d);
+}
+var perfilPendente=false;
+function desenhaPerfis(){
+  var alvo=$("perfis"); if(!alvo) return;
+  /* enquanto o dedo está num campo, não redesenha: a troca do innerHTML
+     levaria o cursor junto. Fica pendente e redesenha ao sair do campo. */
+  if(alvo.querySelector("input:focus, textarea:focus")){ perfilPendente=true; return }
+  perfilPendente=false;
+  alvo.innerHTML=PERFIS.map(function(p){
+    var d=dadosPerfil(p.id), feitos=CHECK.filter(function(c){return d.feito[c[0]]}).length;
+    return '<div class="card">'+
+      '<span class="eyebrow">'+esc(p.n)+'</span>'+
+      '<h3 style="margin:2px 0 0">'+esc(p.papel)+'</h3>'+
+      '<div class="campo"><span>@ do perfil</span><input type="text" data-p="'+p.id+'" data-c="arroba" value="'+esc(d.arroba)+'" placeholder="'+esc(p.arrobaSug||"@")+'"></div>'+
+      (p.hoje?'<div class="banner at"><b>Hoje: '+esc(p.hoje.arroba)+' · '+p.hoje.posts+' posts · '+p.hoje.seguidores+' seguidores · segue '+p.hoje.seguindo+'.</b>'+
+        '<span>A bio fala de <b>Data Analytics, SQL e planejamento financeiro</b> — nada de beleza. Quem chega por indicação do studio não entende que é você. E o link é um menu (guns.lol): cada toque a mais até o WhatsApp perde gente pelo caminho.</span></div>':'')+
+      '<div class="campo"><span>Nome — o campo que a busca lê</span>'+
+        '<input type="text" data-p="'+p.id+'" data-c="nome" value="'+esc(d.nome)+'" placeholder="'+esc(p.nomeSug)+'"></div>'+
+      '<div class="campo"><span>Bio</span>'+
+        '<textarea rows="4" data-p="'+p.id+'" data-c="bio" placeholder="'+esc(p.bioSug)+'">'+esc(d.bio)+'</textarea></div>'+
+      '<div class="campo"><span>Link da bio</span><input type="text" data-p="'+p.id+'" data-c="link" value="'+esc(d.link)+'" placeholder="wa.me/5541..."></div>'+
+      '<div class="campo"><span>Destaques</span>'+
+        '<input type="text" data-p="'+p.id+'" data-c="destaques" value="'+esc(d.destaques)+'" placeholder="'+esc(p.destSug)+'"></div>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px">'+
+        '<button class="btn ghost sm" data-sug="'+p.id+'">Usar a sugestão</button>'+
+        '<button class="btn ghost sm" data-cop="'+p.id+'">Copiar bio</button>'+
+      '</div>'+
+      (p.proposta?'<div class="card flat" style="margin:2px 0 6px">'+
+        '<span class="eyebrow">Proposta · troca tudo de uma vez</span>'+
+        '<p class="tiny" style="margin:2px 0 0">Mantém o Data Analytics e acrescenta o studio — nada da sua carreira se perde. '+
+        'O link passa a abrir o WhatsApp já com a mensagem escrita, em vez do menu.</p>'+
+        '<pre class="prop">'+esc(p.proposta.nome)+String.fromCharCode(10)+String.fromCharCode(10)+
+          esc(p.proposta.bio)+String.fromCharCode(10)+String.fromCharCode(10)+esc(p.proposta.link)+'</pre>'+
+        '<div class="gacts">'+
+          '<button class="btn sm" data-apl="'+p.id+'">Aplicar a proposta</button>'+
+          '<button class="btn ghost sm" data-cpp="'+p.id+'">Copiar a bio nova</button>'+
+        '</div></div>':'')+
+      '<div class="linha-anel"><div class="anel'+(feitos===CHECK.length?" cheio":"")+'">'+
+        '<svg viewBox="0 0 44 44" aria-hidden="true"><circle class="t" cx="22" cy="22" r="19"></circle>'+
+        '<circle class="p" cx="22" cy="22" r="19" style="stroke-dasharray:119.4;stroke-dashoffset:'+
+          (119.4*(1-feitos/CHECK.length)).toFixed(1)+'"></circle></svg>'+
+        '<b>'+feitos+'/'+CHECK.length+'</b></div>'+
+        '<span>Estrutura do perfil</span></div>'+
+      '<div class="chk">'+CHECK.map(function(c){
+        var on=!!d.feito[c[0]];
+        return '<button type="button" aria-pressed="'+on+'" data-ck="'+p.id+'|'+c[0]+'">'+
+          '<span class="bx">'+(on?"✓":"")+'</span>'+
+          '<span class="tx">'+esc(c[1])+'<i>'+esc(c[2])+'</i></span></button>';
+      }).join("")+'</div>'+
+    '</div>';
+  }).join("");
+}
+$("perfis").addEventListener("focusout",function(){
+  setTimeout(function(){
+    var alvo=$("perfis");
+    if(perfilPendente && alvo && !alvo.querySelector("input:focus, textarea:focus")) desenhaPerfis();
+  },60);
+});
+/* grava sozinho pouco depois da última tecla, para não escrever no banco letra por letra */
+var tDigita=null;
+$("perfis").addEventListener("input",function(e){
+  var el=e.target.closest("[data-p]"); if(!el) return;
+  var p=el.dataset.p, c=el.dataset.c, v=el.value;
+  clearTimeout(tDigita);
+  tDigita=setTimeout(function(){ salvaPerfil(p,c,v) },450);
+});
+$("perfis").addEventListener("click",function(e){
+  var ck=e.target.closest("[data-ck]");
+  if(ck){
+    var par=ck.dataset.ck.split("|"), d=dadosPerfil(par[0]);
+    d.feito[par[1]]=!d.feito[par[1]];
+    lojaPerfis.set(par[0],d);
+    return;
+  }
+  var sg=e.target.closest("[data-sug]");
+  if(sg){
+    var p=PERFIS.filter(function(x){return x.id===sg.dataset.sug})[0], d2=dadosPerfil(p.id);
+    d2.arroba=d2.arroba||p.arrobaSug||""; d2.nome=d2.nome||p.nomeSug; d2.bio=d2.bio||p.bioSug; d2.destaques=d2.destaques||p.destSug;
+    lojaPerfis.set(p.id,d2); toast("Sugestão preenchida onde estava vazio");
+    return;
+  }
+  var ap=e.target.closest("[data-apl]");
+  if(ap){
+    var pa=PERFIS.filter(function(x){return x.id===ap.dataset.apl})[0], da=dadosPerfil(pa.id);
+    da.nome=pa.proposta.nome; da.bio=pa.proposta.bio;
+    da.link=pa.proposta.link; da.destaques=pa.proposta.destaques;
+    lojaPerfis.set(pa.id,da); desenhaPerfis();
+    toast("Proposta aplicada — agora é copiar para o Instagram");
+    return;
+  }
+  var cpp=e.target.closest("[data-cpp]");
+  if(cpp){
+    var pb=PERFIS.filter(function(x){return x.id===cpp.dataset.cpp})[0];
+    copiar(pb.proposta.bio,"Bio nova copiada");
+    return;
+  }
+  var cp=e.target.closest("[data-cop]");
+  if(cp){
+    var pp=PERFIS.filter(function(x){return x.id===cp.dataset.cop})[0], dd=dadosPerfil(pp.id);
+    copiar(dd.bio||pp.bioSug,"Bio copiada");
+  }
+});
+
+/* ================= BANCO ================= */
+(function(){
+  var sel=$("bTipo"), f=$("fTipo");
+  TIPOS.forEach(function(t){
+    sel.insertAdjacentHTML("beforeend",'<option value="'+t.id+'">'+esc(t.n)+' — '+esc(t.desc)+'</option>');
+    f.insertAdjacentHTML("beforeend",'<option value="'+t.id+'">'+esc(t.n)+'</option>');
+  });
+  sel.insertAdjacentHTML("beforeend",'<option value="anuncio">Anúncio — criativo que vai rodar pago</option>');
+  f.insertAdjacentHTML("beforeend",'<option value="anuncio">Anúncio</option>');
+})();
+var NOMEP={studio:"Studio Miura",pessoal:"Meu perfil",dois:"Os dois"};
+function nomeTipo(id){ return TIPO[id]?TIPO[id].n:(id==="anuncio"?"Anúncio":id) }
+function itensBanco(){
+  var d=lojaConteudo.todos();
+  return Object.keys(d).map(function(k){ var o=Object.assign({},d[k]); o.id=k; return o })
+    .sort(function(a,b){ return (a.criado||0)-(b.criado||0) });
+}
+$("bAdd").addEventListener("click",function(){
+  var t=$("bTitulo").value.trim();
+  if(!t){ toast("Falta o título"); return }
+  var id="c"+Date.now().toString(36);
+  lojaConteudo.set(id,{
+    tipo:$("bTipo").value, perfil:$("bPerfil").value, titulo:t,
+    texto:$("bTexto").value, link:$("bLink").value.trim(),
+    status:$("bStatus").value, criado:Date.now()
+  });
+  $("bTitulo").value=""; $("bTexto").value=""; $("bLink").value="";
+  toast("Guardado no banco");
+});
+$("bOfertas").addEventListener("click",function(){
+  var tem=itensBanco().filter(function(i){return i.oferta}).length;
+  if(tem){ toast("As ofertas já estão no banco"); return }
+  var base=Date.now();
+  OFERTAS.forEach(function(o,n){
+    var preco=o.publico
+      ? (o.grupo==="laser" ? o.parcelas+"x de "+brl.format(o.parcela)+" — ou "+brl.format(o.total)+" à vista"
+                           : brl.format(o.total)+" à vista")
+      : "SEM PREÇO na peça pública — regra do conselho. O valor vai só no WhatsApp.";
+    lojaConteudo.set("of-"+o.id,{
+      tipo:"oferta", perfil:"studio", oferta:true,
+      titulo:o.nome, texto:preco+"\n\nMensagem que a cliente manda:\n"+o.whats,
+      link:"", status:"pronto", criado:base+n
+    });
+  });
+  toast("11 ofertas trazidas para o banco");
+});
+function desenhaBanco(){
+  var lista=$("bLista"); if(!lista) return;
+  var ft=$("fTipo").value, fp=$("fPerfil").value, fs=$("fStatus").value;
+  var todos=itensBanco();
+  var itens=todos.filter(function(i){
+    return (!ft||i.tipo===ft) && (!fp||i.perfil===fp||i.perfil==="dois") && (!fs||i.status===fs);
+  });
+  $("bConta").textContent=itens.length+" de "+todos.length+" itens";
+  if(!itens.length){
+    lista.innerHTML='<div class="vazio-msg">Nada aqui ainda. Guarde o primeiro item acima — ou traga as onze ofertas de outubro de uma vez.</div>';
+    return;
+  }
+  lista.innerHTML=itens.map(function(i){
+    var cls=TIPO[i.tipo]?i.tipo:"";
+    return '<div class="item">'+
+      '<div class="lin1">'+
+        '<span class="tag '+cls+'">'+esc(nomeTipo(i.tipo))+'</span>'+
+        '<span class="tag">'+esc(NOMEP[i.perfil]||i.perfil)+'</span>'+
+        '<span class="tag '+(i.status==="pronto"?"ok":i.status==="postado"?"":"pend")+'">'+
+          (i.status==="pronto"?"Pronto":i.status==="postado"?"Postado":"Ideia")+'</span>'+
+      '</div>'+
+      '<h4>'+esc(i.titulo)+'</h4>'+
+      (i.texto?'<p>'+esc(i.texto)+'</p>':'')+
+      (i.link?'<a class="tiny" href="'+esc(i.link)+'" target="_blank" rel="noopener">'+esc(i.link)+'</a>':'')+
+      '<div class="gacts">'+
+        (i.texto?'<button class="btn ghost sm" data-cp="'+i.id+'">Copiar texto</button>':'')+
+        '<button class="btn ghost sm" data-st="'+i.id+'">'+(i.status==="pronto"?"Marcar postado":"Marcar pronto")+'</button>'+
+        '<button class="btn ghost sm" data-rm="'+i.id+'">Apagar</button>'+
+      '</div>'+
+    '</div>';
+  }).join("");
+}
+["fTipo","fPerfil","fStatus"].forEach(function(id){ $(id).addEventListener("change",desenhaBanco) });
+$("bLista").addEventListener("click",function(e){
+  var cp=e.target.closest("[data-cp]");
+  if(cp){ var i=lojaConteudo.get(cp.dataset.cp); if(i) copiar(i.texto,"Texto copiado"); return }
+  var st=e.target.closest("[data-st]");
+  if(st){
+    var o=lojaConteudo.get(st.dataset.st); if(!o) return;
+    var novo=Object.assign({},o);
+    novo.status = o.status==="pronto" ? "postado" : "pronto";
+    lojaConteudo.set(st.dataset.st,novo);
+    return;
+  }
+  var rm=e.target.closest("[data-rm]");
+  if(rm){ lojaConteudo.del(rm.dataset.rm); toast("Apagado") }
+});
+
+/* ================= GRADE ================= */
+function prontosDe(perfil){
+  return itensBanco().filter(function(i){
+    return i.status==="pronto" && (i.perfil===perfil||i.perfil==="dois") &&
+           i.tipo!=="data" && i.tipo!=="frase";
+  });
+}
+function desenhaGrade(){
+  var g=$("grade9"); if(!g) return;
+  var perfil=$("gPerfil").value, nove=prontosDe(perfil).slice(0,9);
+  var quadros=[];
+  for(var i=0;i<9;i++){
+    var it=nove[i];
+    quadros.push(it
+      ? '<div class="quad"><b>'+esc(nomeTipo(it.tipo))+'</b><span>'+esc(it.titulo)+'</span></div>'
+      : '<div class="quad vazio"><b>vazio</b><span>falta conteúdo pronto</span></div>');
+  }
+  g.innerHTML=quadros.join("");
+
+  var conta={}; nove.forEach(function(i){ conta[i.tipo]=(conta[i.tipo]||0)+1 });
+  var alvos=TIPOS.filter(function(t){return t.alvo>0});
+  $("gPlacar").innerHTML=alvos.map(function(t){
+    var tem=conta[t.id]||0, alvo=Math.round(t.alvo*0.9);
+    return barra(t.n,"alvo: "+t.alvo+" a cada 10 · tem "+tem+" nestes 9",tem,4,tem>=alvo);
+  }).join("");
+  var ofertas=conta.oferta||0, provas=conta.prova||0;
+  var av=[];
+  if(nove.length<9) av.push("Faltam "+(9-nove.length)+" itens prontos para fechar a grade.");
+  if(!ofertas) av.push("Nenhuma oferta com preço nestes nove — é o furo que a grade antiga já tinha.");
+  if(!provas) av.push("Nenhuma prova de atendimento. É o que mais converte: aparelho, pele, antes e depois.");
+  $("gAviso").textContent=av.join(" ");
+}
+$("gPerfil").addEventListener("change",desenhaGrade);
+
+/* ================= CALENDÁRIO ================= */
+var DIAS=["dom","seg","ter","qua","qui","sex","sáb"];
+function chaveDia(d){
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function desenhaCalendario(){
+  var alvo=$("calendario"); if(!alvo) return;
+  var hoje=new Date(); hoje.setHours(0,0,0,0);
+  var ini=new Date(hoje); ini.setDate(ini.getDate()-ini.getDay());
+  var prontos=itensBanco().filter(function(i){return i.status==="pronto"||i.status==="postado"});
+  var opcoes='<option value="">—</option>'+prontos.map(function(i){
+    return '<option value="'+i.id+'">'+esc(i.titulo.slice(0,42))+'</option>';
+  }).join("");
+  var agenda=lojaAgenda.todos(), saida="";
+  for(var s=0;s<4;s++){
+    var cab=new Date(ini); cab.setDate(cab.getDate()+s*7);
+    saida+='<div class="eyebrow" style="margin-top:'+(s?14:6)+'px">Semana de '+
+      cab.getDate()+"/"+(cab.getMonth()+1)+'</div><div class="sem">';
+    for(var d=0;d<7;d++){
+      var dia=new Date(ini); dia.setDate(dia.getDate()+s*7+d);
+      var k=chaveDia(dia), marcado=(agenda[k]&&agenda[k].item)||"";
+      saida+='<div class="dia'+(k===chaveDia(hoje)?" hoje":"")+'">'+
+        '<b>'+DIAS[dia.getDay()]+" "+dia.getDate()+'</b>'+
+        '<select data-dia="'+k+'">'+opcoes.replace('value="'+marcado+'"','value="'+marcado+'" selected')+'</select>'+
+      '</div>';
+    }
+    saida+='</div>';
+  }
+  alvo.innerHTML=saida;
+}
+$("calendario").addEventListener("change",function(e){
+  var s=e.target.closest("[data-dia]"); if(!s) return;
+  var k=s.dataset.dia;
+  if(s.value) lojaAgenda.set(k,{item:s.value,em:Date.now()});
+  else lojaAgenda.del(k);
+});
+
+/* ================= ANÚNCIOS ================= */
+function campanhas(){
+  var d=lojaAnuncios.todos();
+  return Object.keys(d).map(function(k){ var o=Object.assign({},d[k]); o.id=k; return o })
+    .sort(function(a,b){ return (b.criado||0)-(a.criado||0) });
+}
+$("aAdd").addEventListener("click",function(){
+  var n=$("aNome").value.trim();
+  if(!n){ toast("Falta o nome da campanha"); return }
+  lojaAnuncios.set("a"+Date.now().toString(36),{
+    nome:n, perfil:$("aPerfil").value, objetivo:$("aObj").value, criativo:$("aCria").value.trim(),
+    dia:num($("aDia").value), dias:num($("aDias").value), gasto:num($("aGasto").value),
+    conversas:num($("aConv").value), agendamentos:num($("aAgen").value), ticket:num($("aTicket").value),
+    situacao:$("aSit").value, criado:Date.now()
+  });
+  ["aNome","aCria","aDia","aDias","aGasto","aConv","aAgen","aTicket"].forEach(function(id){ $(id).value="" });
+  toast("Campanha guardada");
+});
+function fx(rot,valor,classe){
+  return '<div class="fx"><b>'+esc(rot)+'</b><span class="'+(classe||"")+'">'+esc(valor)+'</span></div>';
+}
+function desenhaAnuncios(){
+  var lista=$("aLista"); if(!lista) return;
+  var c=campanhas();
+  var gasto=0,conv=0,agen=0,receita=0;
+  c.forEach(function(x){
+    gasto+=x.gasto||0; conv+=x.conversas||0; agen+=x.agendamentos||0;
+    receita+=(x.agendamentos||0)*(x.ticket||0);
+  });
+  var cpc=conv?gasto/conv:0, cpa=agen?gasto/agen:0;
+  $("anuResumo").innerHTML=
+    fx("Investido",brl0.format(gasto))+
+    fx("Conversas",String(conv))+
+    fx("Custo por conversa",conv?brl.format(cpc):"—")+
+    fx("Agendamentos",String(agen))+
+    fx("Custo por agendamento",agen?brl.format(cpa):"—")+
+    fx("Voltou em venda",brl0.format(receita),receita>gasto?"bom":(gasto&&receita<gasto?"ruim":""));
+
+  if(!c.length){
+    lista.innerHTML='<div class="vazio-msg">Nenhuma campanha ainda. Quando subir um anúncio, ponha ele aqui — sem isso não dá para saber se o dinheiro está voltando.</div>';
+    return;
+  }
+  lista.innerHTML=c.map(function(x){
+    var cpa1=x.agendamentos?x.gasto/x.agendamentos:0;
+    var vol=(x.agendamentos||0)*(x.ticket||0);
+    var sobra=vol-(x.gasto||0);
+    var prev=(x.dia||0)*(x.dias||0);
+    var aviso="";
+    if(x.gasto&&!x.conversas) aviso='<div class="banner no"><b>Gastou e não trouxe conversa.</b><span>Ou o criativo não para o dedo, ou o público está errado. Pausar vale mais do que esperar.</span></div>';
+    else if(x.agendamentos&&x.ticket&&sobra<0) aviso='<div class="banner at"><b>Está custando mais do que traz.</b><span>Cada agendamento saiu por '+brl.format(cpa1)+' e o ticket é '+brl.format(x.ticket)+'.</span></div>';
+    return '<div class="item">'+
+      '<div class="lin1">'+
+        '<span class="tag '+(x.situacao==="no-ar"?"ok":"pend")+'">'+
+          (x.situacao==="no-ar"?"No ar":x.situacao==="pausado"?"Pausado":"Encerrado")+'</span>'+
+        '<span class="tag">'+esc(NOMEP[x.perfil]||x.perfil)+'</span>'+
+        '<span class="tag">'+esc(x.objetivo)+'</span>'+
+      '</div>'+
+      '<h4>'+esc(x.nome)+'</h4>'+
+      (x.criativo?'<p>Criativo: '+esc(x.criativo)+'</p>':'')+
+      '<div class="anu">'+
+        fx("Verba",(x.dia?brl0.format(x.dia)+"/dia":"—")+(prev?" · prevê "+brl0.format(prev):""))+
+        fx("Gasto",brl0.format(x.gasto||0))+
+        fx("Conversas",String(x.conversas||0))+
+        fx("Agendou",String(x.agendamentos||0))+
+        fx("Custo por agendamento",x.agendamentos?brl.format(cpa1):"—",
+           (x.agendamentos&&x.ticket)?(cpa1<x.ticket?"bom":"ruim"):"")+
+      '</div>'+
+      aviso+
+      '<div class="gacts">'+
+        '<button class="btn ghost sm" data-ap="'+x.id+'">'+(x.situacao==="no-ar"?"Pausar":"Pôr no ar")+'</button>'+
+        '<button class="btn ghost sm" data-ax="'+x.id+'">Apagar</button>'+
+      '</div>'+
+    '</div>';
+  }).join("");
+}
+$("aLista").addEventListener("click",function(e){
+  var ap=e.target.closest("[data-ap]");
+  if(ap){
+    var x=lojaAnuncios.get(ap.dataset.ap); if(!x) return;
+    var novo=Object.assign({},x);
+    novo.situacao = x.situacao==="no-ar" ? "pausado" : "no-ar";
+    lojaAnuncios.set(ap.dataset.ap,novo);
+    return;
+  }
+  var ax=e.target.closest("[data-ax]");
+  if(ax){ lojaAnuncios.del(ax.dataset.ax); toast("Campanha apagada") }
+});
+
+/* primeira pintura */
+desenhaPerfis(); desenhaBanco(); desenhaGrade(); desenhaCalendario(); desenhaAnuncios();
+})();
+</script>
+
+<script>
+/* ======================= A PÁGINA GANHA MOVIMENTO =======================
+   Tudo aqui é enfeite: se falhar, a página continua inteira e usável.
+   Roda também dentro do painel, onde `document` é o shadow root. */
+(function(){
+"use strict";
+var raiz = document;
+var parado = false;
+try{ parado = window.matchMedia("(prefers-reduced-motion: reduce)").matches }catch(e){}
+
+/* ---- 1. revelar ao rolar ---- */
+var olho = null;
+if(!parado && window.IntersectionObserver){
+  olho = new IntersectionObserver(function(ent){
+    ent.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add("on");
+      olho.unobserve(e.target);
+      anima(e.target);
+    });
+  },{rootMargin:"0px 0px -8% 0px", threshold:.08});
+}
+function marca(el){
+  if(!olho){ el.classList.add("on"); anima(el); return }
+  if(el.classList.contains("rv")) return;
+  el.classList.add("rv");
+  olho.observe(el);
+}
+function varre(){
+  [].slice.call(raiz.querySelectorAll(".card, .itens > .item, .grade9, .sem")).forEach(marca);
+}
+
+/* ---- 2. barras crescem e números contam ---- */
+function anima(escopo){
+  [].slice.call(escopo.querySelectorAll ? escopo.querySelectorAll(".pl") : []).forEach(function(pl,i){
+    var barra = pl.querySelector(".bar > i"), alvo = pl.querySelector(".n");
+    if(barra && barra.dataset.w === undefined){
+      barra.dataset.w = barra.style.width || "0%";
+      barra.style.width = "0%";
+    }
+    setTimeout(function(){
+      if(barra) barra.style.width = barra.dataset.w;
+      if(alvo) conta(alvo);
+    }, parado ? 0 : 60 + i*70);
+  });
+}
+function conta(el){
+  var fim = parseFloat(String(el.textContent).replace(",","."));
+  if(!isFinite(fim) || parado || fim > 999){ return }
+  var t0 = 0, dur = 620;
+  function passo(t){
+    if(!t0) t0 = t;
+    var k = Math.min(1,(t-t0)/dur);
+    el.textContent = String(Math.round(fim * (1 - Math.pow(1-k,3))));
+    if(k < 1) requestAnimationFrame(passo);
+  }
+  el.textContent = "0";
+  requestAnimationFrame(passo);
+}
+
+/* ---- 3. o selo da abertura conta o que já existe ---- */
+function selo(){
+  var e = raiz.getElementById("heroSelo");
+  if(!e) return;
+  var n = raiz.querySelectorAll("#bLista > .item").length;
+  var c = raiz.querySelectorAll('.chk button[aria-pressed="true"]').length;
+  e.textContent = n ? (n + (n===1?" item no banco":" itens no banco") + " · " + c + " de 16 na estrutura")
+                    : "banco vazio · comece pela aba Banco";
+}
+
+/* ---- 4. o conteúdo é redesenhado o tempo todo; reobservar o que nasce ---- */
+var pendente = null;
+function depois(){
+  clearTimeout(pendente);
+  pendente = setTimeout(function(){ varre(); selo() }, 90);
+}
+try{
+  new MutationObserver(depois).observe(raiz.body || raiz, {childList:true, subtree:true});
+}catch(e){}
+
+/* ---- 5. trocar de aba volta ao topo e reanima o que estiver à vista ---- */
+[].slice.call(raiz.querySelectorAll(".tab")).forEach(function(t){
+  t.addEventListener("click",function(){
+    try{ (raiz.body||document.body).scrollIntoView({behavior: parado?"auto":"smooth", block:"start"}) }catch(e){}
+    depois();
+  });
+});
+
+varre(); selo();
+})();
+</script>
+</body>
+</html>
